@@ -6,6 +6,7 @@ public class TestSleepWait {
     private final static Object lock = new Object();
     public static void main(String[] args) {
         Stream.of("线程1","线程2").forEach(n->new Thread(n) {
+            @Override
             public void run(){
                 TestSleepWait.testSleep();
             }
