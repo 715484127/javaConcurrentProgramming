@@ -54,8 +54,8 @@ class ShareResource{
     Condition conditionC = lock.newCondition();
 
     public void print5() throws InterruptedException {
+        lock.lock();
         try{
-            lock.lock();
             while (flag != 1){
                 conditionA.await();
             }
@@ -70,8 +70,8 @@ class ShareResource{
     }
 
     public void print10() throws InterruptedException {
+        lock.lock();
         try{
-            lock.lock();
             while (flag != 2){
                 conditionB.await();
             }
@@ -86,8 +86,8 @@ class ShareResource{
     }
 
     public void print15() throws InterruptedException {
+        lock.lock();
         try{
-            lock.lock();
             while (flag != 3){
                 conditionC.await();
             }
